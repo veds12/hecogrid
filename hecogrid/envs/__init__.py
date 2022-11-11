@@ -63,7 +63,7 @@ def register_marl_env(
     env_class_name = f"env_{len(registered_envs)}"
     setattr(this_module, env_class_name, RegEnv)
     registered_envs.append(env_name)
-    gym_register(env_name, entry_point=f"marlgrid.envs:{env_class_name}")
+    gym_register(env_name, entry_point=f"hecogrid.envs:{env_class_name}")
 
 
 def env_from_config(env_config, randomize_seed=True):
@@ -83,83 +83,83 @@ def get_env_class(env_name):
         'ClutteredGoalTileEnv': ClutteredGoalTileEnv,
         'TeamTogetherEnv': TeamTogetherEnv,
         'TeamSupportEnv': TeamSupportEnv,
-        "keyfortreasure": KeyForTreasure,
+        "KeyForTreasureEnv": KeyForTreasure,
     }
 
     return classes[env_name]
 
-register_marl_env(
-    "Goaltile-2Agents-100Goals-v0",
-    ClutteredGoalTileEnv,
-    n_agents=2,
-    grid_size=30,
-    max_steps=150,
-    view_size=7,
-    view_tile_size=8,
-    view_offset=1,
-    env_kwargs={
-        'clutter_density':0.1,
-        'n_bonus_tiles': 100,
-    }
-)
+# register_marl_env(
+#     "Goaltile-2Agents-100Goals-v0",
+#     ClutteredGoalTileEnv,
+#     n_agents=2,
+#     grid_size=30,
+#     max_steps=150,
+#     view_size=7,
+#     view_tile_size=8,
+#     view_offset=1,
+#     env_kwargs={
+#         'clutter_density':0.1,
+#         'n_bonus_tiles': 100,
+#     }
+# )
 
-register_marl_env(
-    "Goaltile-20Agents-100Goals-v0",
-    ClutteredGoalTileEnv,
-    n_agents=20,
-    grid_size=30,
-    max_steps=150,
-    view_size=7,
-    view_tile_size=8,
-    view_offset=1,
-    env_kwargs={
-        'clutter_density':0.1,
-        'n_bonus_tiles': 100,
-    }
-)
+# register_marl_env(
+#     "Goaltile-20Agents-100Goals-v0",
+#     ClutteredGoalTileEnv,
+#     n_agents=20,
+#     grid_size=30,
+#     max_steps=150,
+#     view_size=7,
+#     view_tile_size=8,
+#     view_offset=1,
+#     env_kwargs={
+#         'clutter_density':0.1,
+#         'n_bonus_tiles': 100,
+#     }
+# )
 
-register_marl_env(
-    "Goaltile-2Agents-100Goals-v0",
-    ClutteredGoalTileEnv,
-    n_agents=2,
-    grid_size=30,
-    max_steps=150,
-    view_size=7,
-    view_tile_size=1,
-    view_offset=1,
-    env_kwargs={
-        'clutter_density':0.1,
-        'n_bonus_tiles': 100,
-    }
-)
+# register_marl_env(
+#     "Goaltile-2Agents-100Goals-v0",
+#     ClutteredGoalTileEnv,
+#     n_agents=2,
+#     grid_size=30,
+#     max_steps=150,
+#     view_size=7,
+#     view_tile_size=1,
+#     view_offset=1,
+#     env_kwargs={
+#         'clutter_density':0.1,
+#         'n_bonus_tiles': 100,
+#     }
+# )
 
-register_marl_env(
-    "Goaltile-20Agents-100Goals-v1",
-    ClutteredGoalTileEnv,
-    n_agents=20,
-    grid_size=30,
-    max_steps=150,
-    view_size=7,
-    view_tile_size=8,
-    view_offset=1,
-    env_kwargs={
-        'clutter_density':0.2,
-        'n_bonus_tiles': 100,
-    }
-)
+# register_marl_env(
+#     "Goaltile-20Agents-100Goals-v1",
+#     ClutteredGoalTileEnv,
+#     n_agents=20,
+#     grid_size=30,
+#     max_steps=150,
+#     view_size=7,
+#     view_tile_size=8,
+#     view_offset=1,
+#     env_kwargs={
+#         'clutter_density':0.2,
+#         'n_bonus_tiles': 100,
+#     }
+# )
 
 
-register_marl_env(
-    "keyfortreasure-10Agents-v1",
-    keyfortreasure,
-    n_agents=10,
-    grid_size=30,
-    max_steps=150,
-    view_size=7,
-    view_tile_size=8,
-    view_offset=1,
-    env_kwargs={
-            'clutter_density':0.2,
-            'n_bonus_tiles': 100,
-    }
-)
+# register_marl_env(
+#     "keyfortreasure-10Agents-v1",
+#     keyfortreasure,
+#     n_agents=10,
+#     grid_size=30,
+#     max_steps=150,
+#     view_size=7,
+#     view_tile_size=8,
+#     view_offset=1,
+#     env_kwargs={
+#             'clutter_density':0.2,
+#             'n_bonus_tiles': 100,
+#     }
+# )
